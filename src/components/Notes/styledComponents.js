@@ -71,6 +71,13 @@ export const AddButton = styled.button`
 `
 
 export const CommentsList = styled.ul`
+  display: flex;
   padding-left: 0;
   list-style-type: none;
+  width: 700px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+`
+export const EmptyNotes = styled.p`
+  color: #aab8c8;
 `

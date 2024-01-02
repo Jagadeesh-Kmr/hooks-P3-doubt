@@ -1,26 +1,34 @@
 import {
   ListItem,
-  Avatar,
   NameAndCommentContainer,
   NameText,
   CommentText,
-  HorizontalLine,
+  EmptyImage,
 } from './styledComponents'
 
 const NoteItem = props => {
   const {commentDetails} = props
-  const {name, commentText} = commentDetails
-  console.log(commentDetails)
+  const {title, comment} = commentDetails
+  const commentLength = commentDetails.length === 0
   return (
     <>
-      <ListItem>
-        {name && <Avatar>{name[0].toUpperCase()}</Avatar>}
-        <NameAndCommentContainer>
-          <NameText>{name}</NameText>
-          <CommentText>{commentText}</CommentText>
-        </NameAndCommentContainer>
-      </ListItem>
-      <HorizontalLine />
+      {commentLength ? (
+        <div>
+          <EmptyImage
+            src="https://assets.ccbp.in/frontend/hooks/empty-notes-img.png"
+            alt="notes empty"
+          />
+          <NameText>No Notes Yet</NameText>
+          <NameText>Notes you add will appear here</NameText>
+        </div>
+      ) : (
+        <ListItem>
+          <NameAndCommentContainer>
+            <NameText>{title}</NameText>
+            <CommentText>{comment}</CommentText>
+          </NameAndCommentContainer>
+        </ListItem>
+      )}
     </>
   )
 }

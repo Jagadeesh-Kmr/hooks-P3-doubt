@@ -43,10 +43,17 @@ const Notes = () => {
     <>
       <BgContainer>
         <NotesH1>Notes</NotesH1>
-        <NotesInputForm onClick={submitForm}>
-          <TitleInput placeholder="Title" onChange={onChangeTitle} />
+        <NotesInputForm onSubmit={submitForm}>
+          <TitleInput
+            placeholder="Title"
+            type="text"
+            value={title}
+            onChange={onChangeTitle}
+          />
           <CommentTextInput
             placeholder="Take a Note..."
+            row="6"
+            value={comment}
             onChange={onChangeComment}
           />
           <AddButton type="submit">Add</AddButton>
