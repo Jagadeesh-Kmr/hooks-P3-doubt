@@ -28,7 +28,3 @@ export const CommentText = styled.p`
   font-size: 14px;
   margin-top: 12px;
 `
-export const EmptyImage = styled.img`
-  width: 30px;
-  height: 30px;
-`

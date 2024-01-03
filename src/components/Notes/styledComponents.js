@@ -78,6 +78,29 @@ export const CommentsList = styled.ul`
   margin-top: 80px;
   flex-wrap: wrap;
 `
-export const EmptyNotes = styled.p`
-  color: #aab8c8;
+export const EmptyNotesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+`
+
+export const EmptyNotesH1 = styled.h1`
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 700;
+`
+
+export const EmptyNotesP = styled.p`
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+`
+export const EmptyImage = styled.img`
+  width: 80px;
+  height: 80px;
 `

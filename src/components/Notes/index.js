@@ -11,6 +11,10 @@ import {
   AddButton,
   NotesInputForm,
   CommentsList,
+  EmptyImage,
+  EmptyNotesP,
+  EmptyNotesH1,
+  EmptyNotesContainer,
 } from './styledComponents'
 
 const Notes = () => {
@@ -39,6 +43,8 @@ const Notes = () => {
     setComment('')
   }
 
+  const commentsLength = commentsList.length === 0
+
   return (
     <>
       <BgContainer>
@@ -58,11 +64,22 @@ const Notes = () => {
           />
           <AddButton type="submit">Add</AddButton>
         </NotesInputForm>
-        <CommentsList>
-          {commentsList.map(eachList => (
-            <NoteItem kay={eachList.id} commentDetails={eachList} />
-          ))}
-        </CommentsList>
+        {commentsLength ? (
+          <EmptyNotesContainer>
+            <EmptyImage
+              src="https://assets.ccbp.in/frontend/hooks/empty-notes-img.png"
+              alt="notes empty"
+            />
+            <EmptyNotesH1>No Notes Yet</EmptyNotesH1>
+            <EmptyNotesP>Notes you add will appear here</EmptyNotesP>
+          </EmptyNotesContainer>
+        ) : (
+          <CommentsList>
+            {commentsList.map(eachList => (
+              <NoteItem key={eachList.id} commentDetails={eachList} />
+            ))}
+          </CommentsList>
+        )}
       </BgContainer>
     </>
   )
